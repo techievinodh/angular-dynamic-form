@@ -4,6 +4,10 @@
   "newProjectRoot": "projects",
   "projects": {
     "angular-dynamic-form": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": { "ta": "src/locale/messages.ta.json" }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": true,
             "outputPath": "dist/angular-dynamic-form",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -44,9 +49,13 @@
               "outputHashing": "all"
             },
             "development": {
+              "localize": false,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "ta": {
+              "localize": ["ta"]
             }
           },
           "defaultConfiguration": "production"
@@ -59,6 +68,9 @@
             },
             "development": {
               "buildTarget": "angular-dynamic-form:build:development"
+            },
+            "ta": {
+              "buildTarget": "angular-dynamic-form:build:development,ta"
             }
           },
           "defaultConfiguration": "development"
@@ -66,7 +78,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-dynamic-form:build"
+            "buildTarget": "angular-dynamic-form:build",
+            "outputPath": "src/locale"
           }
         },
         "test": {

@@ -10,5 +10,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-dynamic-form';
+  test = $localize`Hello!`;
+
+  count = 3;
+  text = $localize`${this.count} pies`;
 }
