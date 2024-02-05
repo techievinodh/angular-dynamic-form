@@ -1,4 +1,16 @@
 {
   "editor.formatOnSave": true,
-  "eslint.validate": ["javascript", "typescript"]
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "cSpell.words": [
+    "devkit",
+    "domhandler",
+    "ngrx",
+    "packagr",
+    "taxhub",
+    "tinymce",
+    "webstorage"
+  ]
 }
